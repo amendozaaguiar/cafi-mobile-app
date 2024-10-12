@@ -15,6 +15,7 @@ import { login } from "../api/login";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import Toast from "react-native-toast-message";
+import useAuthStore from "../storage/AuthStore";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -26,6 +27,7 @@ const LoginSchema = Yup.object().shape({
 export default function LoginScreen() {
   const theme = useTheme();
   const router = useRouter();
+  const { setUser } = useAuthStore();
   const styles = createStyles(theme.colors);
 
   const loginMutation = useMutation({
@@ -33,10 +35,9 @@ export default function LoginScreen() {
     onSuccess: async (data) => {
       // Guarda el token y los datos de usuario en AsyncStorage
       try {
-        await AsyncStorage.setItem("userToken", data.token);
-        await AsyncStorage.setItem("userData", JSON.stringify(data.user)); // Convierte el objeto a string
+        await setUser(data);
 
-        router.replace("/home");
+        router.replace("/(auth)/home");
       } catch (e) {
         Toast.show({
           type: "error",
@@ -70,7 +71,7 @@ export default function LoginScreen() {
         Iniciar sesión
       </Text>
       <Text variant="titleLarge" style={styles.subtitle}>
-        Bienvenido a la aplicaciónss
+        Bienvenido a la aplicacións
       </Text>
 
       <Formik

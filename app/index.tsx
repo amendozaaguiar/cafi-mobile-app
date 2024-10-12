@@ -1,11 +1,10 @@
-import { View } from "react-native";
 import { Text } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function HomeScreen() {
+export default function AppScrren() {
   return (
     <SafeAreaView>
-      <Text>Home Screen</Text>
+      <Text>Cargando...</Text>
     </SafeAreaView>
   );
 }
