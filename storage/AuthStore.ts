@@ -8,7 +8,10 @@ const useAuthStore = create((set) => ({
   loadUser: async () => {
     try {
       const user = await AsyncStorage.getItem("user");
-      set({ user });
+
+      const userJson = user ? JSON.parse(user) : null;
+
+      set({ userJson });
     } catch (e) {
       console.log("Error loading user", e);
     }

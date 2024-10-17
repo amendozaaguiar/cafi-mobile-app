@@ -4,16 +4,14 @@ import { View } from "react-native";
 import { Button, Text } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import useAuthStore from "../../../storage/AuthStore";
+import CarouselHeader from "../../../components/CarouselHeader";
 
 export default function HomeScreen() {
-  const { user, clearUser } = useAuthStore();
-
-  console.log(user);
+  // const { user, clearUser } = useAuthStore();
 
   return (
-    <SafeAreaView>
-      <Text>{user?.email}</Text>
-      <Button onPress={() => clearUser()}>Salir</Button>
-    </SafeAreaView>
+    <View>
+      <CarouselHeader />
+    </View>
   );
 }

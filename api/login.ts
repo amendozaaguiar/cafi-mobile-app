@@ -10,14 +10,10 @@ const login = async ({ email, password, remember }) => {
       photo: "https://randomuser.me/api/portraits/women/70.jpg",
       name: "Administrador del sistema",
       email: "admin@inmov.com",
+      token: "fakeToken",
     };
 
-    const fakeToken = "fakeToken";
-
-    return {
-      user: fakeUser,
-      token: fakeToken,
-    };
+    return fakeUser;
   } catch (e) {
     throw e;
   }

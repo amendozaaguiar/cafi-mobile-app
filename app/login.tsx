@@ -71,7 +71,7 @@ export default function LoginScreen() {
         Iniciar sesión
       </Text>
       <Text variant="titleLarge" style={styles.subtitle}>
-        Bienvenido a la aplicacións
+        Bienvenido a la aplicación
       </Text>
 
       <Formik
