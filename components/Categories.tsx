@@ -1,4 +1,10 @@
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+  ScrollView,
+} from "react-native";
 import { Button, Text, useTheme } from "react-native-paper";
 import { useRouter } from "expo-router";
 import Toast from "react-native-toast-message";
@@ -32,7 +38,11 @@ export default function Categories() {
       <Text variant="headlineLarge" style={styles.categories}>
         Categorias
       </Text>
-      <View style={styles.container}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false} // Oculta el indicador de scroll
+        contentContainerStyle={styles.scrollContainer} // Aplica padding al contenido del scroll
+      >
         {categories.map((category, index) => (
           <TouchableOpacity
             key={index}
@@ -56,7 +66,6 @@ export default function Categories() {
           >
             <Image source={category.image} />
             <Text
-              variant="titleLarge"
               style={
                 index === categories.length - 1
                   ? [styles.categoryTitle, styles.categoryTitleSelected]
@@ -67,7 +76,7 @@ export default function Categories() {
             </Text>
           </TouchableOpacity>
         ))}
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -78,23 +87,20 @@ const createStyles = (colors) =>
       padding: 10,
       fontWeight: "bold",
     },
-    container: {
-      padding: 10,
-      flexDirection: "row",
-      flexWrap: "wrap",
+    scrollContainer: {
+      //   padding: 10,
     },
-
+    container: {
+      flexDirection: "row",
+    },
     category: {
       alignItems: "center",
       padding: 10,
       margin: 10,
-      height: 150,
-      width: 140,
+      height: 100,
       //   borderRadius: 10,
       //   borderColor: colors.secondary,
       //   borderWidth: 2,
-      //   //   height: 150,
-      //   //   width: 500,
     },
     categorySelected: {
       backgroundColor: colors.primary,
@@ -106,12 +112,12 @@ const createStyles = (colors) =>
       height: 70,
     },
     categoryTitle: {
-      color: colors.primary,
-      fontWeight: "bold",
+      fontWeight: "light",
       position: "absolute",
       bottom: 0,
     },
     categoryTitleSelected: {
+      fontWeight: "bold",
       color: "#fff",
     },
   });

@@ -32,10 +32,10 @@ export default function CarouselHeader() {
         mode="parallax"
         autoPlay={true}
         loop={true}
-        autoPlayInterval={2000}
+        autoPlayInterval={3000}
         modeConfig={{
-          parallaxScrollingScale: 0.9,
-          parallaxScrollingOffset: 100,
+          parallaxScrollingScale: 0.85,
+          parallaxScrollingOffset: 150,
         }}
         width={width}
         height={width / 2}

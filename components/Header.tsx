@@ -20,7 +20,7 @@ export default function Header({ user }) {
       </View>
 
       <View style={styles.notification}>
-        <Icon source="bell" size={40} color="white" />
+        <Icon source="bell" size={25} color="white" />
         <Text style={styles.notificationNumber}>9</Text>
       </View>
     </View>
@@ -33,13 +33,14 @@ const createTheme = (colors) =>
       flexDirection: "row",
       alignItems: "center",
       backgroundColor: colors.primary,
-      padding: 20,
+      padding: 10,
     },
     containerName: {
       marginLeft: 20,
     },
     text: {
       color: "white",
+      fontWeight: "bold",
     },
     notification: {
       padding: 10,
