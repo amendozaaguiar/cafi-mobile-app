@@ -55,10 +55,7 @@ export default function CarouselHeader() {
               styles.dotStyle,
               {
                 marginRight: index === data.length - 1 ? 0 : 5,
-                backgroundColor:
-                  index === currentIndex
-                    ? theme.colors.primary
-                    : theme.colors.secondary,
+                width: index === currentIndex ? 40 : 10,
               },
             ]}
           />
@@ -81,8 +78,8 @@ const createStyles = (width, colors) =>
       marginTop: width / 2 - 10,
     },
     dotStyle: {
-      width: 20,
       height: 10,
       borderRadius: 5,
+      backgroundColor: colors.secondary,
     },
   });
