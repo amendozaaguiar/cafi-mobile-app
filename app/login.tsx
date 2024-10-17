@@ -76,9 +76,9 @@ export default function LoginScreen() {
 
       <Formik
         initialValues={{
-          email: "amendoza@inmov.com",
+          email: "test@cafi.com",
           password: "12345678",
-          remember: false,
+          remember: true,
         }}
         validationSchema={LoginSchema}
         onSubmit={(values) => handleLogin(values)}

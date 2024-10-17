@@ -1,6 +1,6 @@
 const login = async ({ email, password, remember }) => {
   try {
-    if (email !== "amendoza@inmov.com" || password !== "12345678") {
+    if (email !== "test@cafi.com" || password !== "12345678") {
       throw new Error("Usuario o contraseña incorrectos");
     }
 
@@ -9,7 +9,7 @@ const login = async ({ email, password, remember }) => {
     const fakeUser = {
       photo: "https://randomuser.me/api/portraits/women/70.jpg",
       name: "Administrador del sistema",
-      email: "admin@inmov.com",
+      email: "test@cafi.com",
       token: "fakeToken",
     };
 

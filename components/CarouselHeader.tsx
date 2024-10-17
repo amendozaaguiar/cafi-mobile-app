@@ -6,15 +6,15 @@ import Carousel from "react-native-reanimated-carousel";
 const data = [
   {
     title: "Title 1",
-    image: require("../assets/slider/slider.png"),
+    image: require("../assets/slider/slider-1.png"),
   },
   {
     title: "Title 2",
-    image: require("../assets/slider/slider.png"),
+    image: require("../assets/slider/slider-2.png"),
   },
   {
     title: "Title 3",
-    image: require("../assets/slider/slider.png"),
+    image: require("../assets/slider/slider-3.png"),
   },
 ];
 
@@ -24,8 +24,6 @@ export default function CarouselHeader() {
   const theme = useTheme();
 
   const styles = createStyles(width, theme.colors);
-
-  console.log("currentIndex", currentIndex);
 
   return (
     <View>
@@ -71,11 +69,12 @@ const createStyles = (width, colors) =>
       width: width,
       height: width / 2,
       borderRadius: 20,
+      resizeMode: "cover",
     },
     dotContainer: {
       flexDirection: "row",
       justifyContent: "center",
-      marginTop: width / 2 - 10,
+      marginTop: width / 2 + 5,
     },
     dotStyle: {
       height: 10,
