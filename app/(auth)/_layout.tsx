@@ -44,8 +44,6 @@ export default function AuthLayout() {
     checkSession();
   }, [user]);
 
-  if (!user) return null;
-
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <QueryClientProvider client={queryClient}>

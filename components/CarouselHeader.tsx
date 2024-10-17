@@ -1,8 +1,7 @@
 import * as React from "react";
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import { useTheme } from "react-native-paper";
-import { useSharedValue } from "react-native-reanimated";
-import Carousel, { Pagination } from "react-native-reanimated-carousel";
+import Carousel from "react-native-reanimated-carousel";
 
 const data = [
   {
@@ -20,18 +19,22 @@ const data = [
 ];
 
 export default function CarouselHeader() {
+  const [currentIndex, setCurrentIndex] = React.useState(0);
   const width = Dimensions.get("window").width;
   const theme = useTheme();
 
   const styles = createStyles(width, theme.colors);
 
+  console.log("currentIndex", currentIndex);
+
   return (
-    <View style={{ flex: 1 }}>
+    <View>
       <Carousel
+        onSnapToItem={(index) => setCurrentIndex(index)}
         mode="parallax"
         autoPlay={true}
         loop={true}
-        autoPlayInterval={5000}
+        autoPlayInterval={2000}
         modeConfig={{
           parallaxScrollingScale: 0.9,
           parallaxScrollingOffset: 100,
@@ -40,23 +43,46 @@ export default function CarouselHeader() {
         height={width / 2}
         data={data}
         renderItem={({ item }) => (
-          <View style={styles.container}>
-            <Image source={item.image} style={styles.image} />
-          </View>
+          <Image source={item.image} style={styles.image} />
         )}
       />
+
+      <View style={styles.dotContainer}>
+        {data.map((_, index) => (
+          <View
+            key={index}
+            style={[
+              styles.dotStyle,
+              {
+                marginRight: index === data.length - 1 ? 0 : 5,
+                backgroundColor:
+                  index === currentIndex
+                    ? theme.colors.primary
+                    : theme.colors.secondary,
+              },
+            ]}
+          />
+        ))}
+      </View>
     </View>
   );
 }
 
 const createStyles = (width, colors) =>
   StyleSheet.create({
-    container: {
-      flex: 1,
-    },
     image: {
       width: width,
       height: width / 2,
       borderRadius: 20,
+    },
+    dotContainer: {
+      flexDirection: "row",
+      justifyContent: "center",
+      marginTop: width / 2 - 10,
+    },
+    dotStyle: {
+      width: 20,
+      height: 10,
+      borderRadius: 5,
     },
   });

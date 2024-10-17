@@ -4,7 +4,7 @@ const login = async ({ email, password, remember }) => {
       throw new Error("Usuario o contraseña incorrectos");
     }
 
-    await new Promise((resolve) => setTimeout(resolve, 5000));
+    // await new Promise((resolve) => setTimeout(resolve, 5000));
 
     const fakeUser = {
       photo: "https://randomuser.me/api/portraits/women/70.jpg",
