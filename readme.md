@@ -1,6 +1,6 @@
 ![Captura de Pantalla](./assets/readme.png)
 
-# ☕ Cafi App
+# ☕ Cafi Mobile App
 
 Cafi es una aplicación de React Native inspirada en el [Cafi Mobile App - Coffee App UI Kit](https://www.figma.com/community/file/1170384911453070962), un diseño limpio y moderno para una aplicación de café. Este proyecto fue desarrollado para demostrar mis conocimientos en desarrollo de aplicaciones móviles con React Native y destacar mis habilidades en la creación de interfaces de usuario atractivas y funcionales, como parte de mi portafolio.
 
@@ -32,13 +32,13 @@ Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/amendozaaguiar/cafi-app.git
+   git clone https://github.com/amendozaaguiar/cafi-mobile-app.git
    ```
 
 2. Navega al directorio del proyecto:
 
    ```bash
-   cd cafi-app
+   cd cafi-mobile-app
    ```
 
 3. Instala las dependencias:
