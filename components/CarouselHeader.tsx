@@ -74,7 +74,6 @@ const createStyles = (width, colors) =>
     dotContainer: {
       flexDirection: "row",
       justifyContent: "center",
-      marginTop: width / 2 + 5,
     },
     dotStyle: {
       height: 10,

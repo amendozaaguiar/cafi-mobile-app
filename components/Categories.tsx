@@ -26,6 +26,22 @@ const categories = [
     title: "Frappe",
     image: require("../assets/categories/category-4.png"),
   },
+  {
+    title: "Helados",
+    image: require("../assets/categories/category-1.png"),
+  },
+  {
+    title: "Calientes",
+    image: require("../assets/categories/category-2.png"),
+  },
+  {
+    title: "Té",
+    image: require("../assets/categories/category-3.png"),
+  },
+  {
+    title: "Frappe",
+    image: require("../assets/categories/category-4.png"),
+  },
 ];
 
 export default function Categories() {
@@ -114,7 +130,7 @@ const createStyles = (colors) =>
     categoryTitle: {
       fontWeight: "light",
       position: "absolute",
-      bottom: 0,
+      bottom: -10,
     },
     categoryTitleSelected: {
       fontWeight: "bold",
