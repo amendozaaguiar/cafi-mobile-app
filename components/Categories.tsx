@@ -52,7 +52,7 @@ export default function Categories() {
   return (
     <View>
       <Text variant="headlineLarge" style={styles.categories}>
-        Categorias
+        Categories
       </Text>
       <ScrollView
         horizontal
@@ -113,10 +113,7 @@ const createStyles = (colors) =>
       alignItems: "center",
       padding: 10,
       margin: 10,
-      height: 100,
-      //   borderRadius: 10,
-      //   borderColor: colors.secondary,
-      //   borderWidth: 2,
+      height: 110,
     },
     categorySelected: {
       backgroundColor: colors.primary,
@@ -130,7 +127,7 @@ const createStyles = (colors) =>
     categoryTitle: {
       fontWeight: "light",
       position: "absolute",
-      bottom: -10,
+      bottom: 10,
     },
     categoryTitleSelected: {
       fontWeight: "bold",

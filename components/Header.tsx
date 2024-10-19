@@ -11,12 +11,12 @@ export default function Header({ user }) {
       <Avatar.Image
         size={50}
         source={{
-          uri: user.photo,
+          uri: user?.photo,
         }}
       />
       <View style={styles.containerName}>
         <Text style={styles.text}>Bienvenido</Text>
-        <Text style={styles.text}>{user.name}</Text>
+        <Text style={styles.text}>{user?.name}</Text>
       </View>
 
       <View style={styles.notification}>

@@ -13,18 +13,9 @@ import useAuthStore from "../../storage/AuthStore";
 import Header from "../../components/Header";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import theme from "../../constants/Theme";
+import Footer from "../../components/Footer";
 
-const theme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: "#FF045F",
-    secondary: "#FFC100",
-    tertiary: "#1E18CF",
-  },
-};
-
-// Create a client
 const queryClient = new QueryClient();
 
 export default function AuthLayout() {
@@ -48,10 +39,15 @@ export default function AuthLayout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <QueryClientProvider client={queryClient}>
         <PaperProvider theme={theme}>
-          <SafeAreaView>
-            <StatusBar backgroundColor={theme.colors.primary} />
+          <StatusBar backgroundColor={theme.colors.primary} />
+          <SafeAreaView
+            style={{
+              flex: 1,
+            }}
+          >
             <Header user={user} />
             <Slot />
+            <Footer />
             <Toast />
           </SafeAreaView>
         </PaperProvider>

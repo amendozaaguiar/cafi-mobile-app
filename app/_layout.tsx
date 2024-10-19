@@ -2,7 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Slot, Stack, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   MD3LightTheme as DefaultTheme,
   PaperProvider,
@@ -10,18 +10,11 @@ import {
 } from "react-native-paper";
 import Toast from "react-native-toast-message";
 import useAuthStore from "../storage/AuthStore";
+import * as SplashScreen from "expo-splash-screen";
+import theme from "../constants/Theme";
 
-const theme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: "#FF045F",
-    secondary: "#FFC100",
-    tertiary: "#1E18CF",
-  },
-};
+SplashScreen.preventAutoHideAsync();
 
-// Create a client
 const queryClient = new QueryClient();
 
 export default function RootLayout() {
@@ -29,22 +22,26 @@ export default function RootLayout() {
   const { user, loadUser } = useAuthStore();
 
   useEffect(() => {
-    const checkSession = async () => {
-      await loadUser();
-      if (user) {
-        router.replace("/(auth)/home");
-      } else {
-        router.replace("/onboarding");
+    async function prepare() {
+      try {
+        await loadUser();
+        if (user) {
+          router.replace("/(auth)/home");
+        } else {
+          router.replace("/onboarding");
+        }
+      } catch (e) {
+        console.warn(e);
+      } finally {
+        await SplashScreen.hideAsync();
       }
-    };
-
-    checkSession();
+    }
+    prepare();
   }, [user]);
 
   return (
     <QueryClientProvider client={queryClient}>
       <PaperProvider theme={theme}>
-        <StatusBar backgroundColor={theme.colors.primary} />
         <Slot />
         <Toast />
       </PaperProvider>

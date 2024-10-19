@@ -124,6 +124,126 @@ const items = [
     image: require("../assets/items/item-4.png"),
     favorite: false,
   },
+  {
+    title: "Mocha Frappe",
+    price: {
+      before: 5.99,
+      after: 4.99,
+    },
+    score: 4.5,
+    image: require("../assets/items/item-1.png"),
+    favorite: true,
+  },
+  {
+    title: "Ice Green Tea",
+    price: {
+      before: 3.99,
+      after: 2.99,
+    },
+    score: 4.0,
+    image: require("../assets/items/item-2.png"),
+    favorite: false,
+  },
+  {
+    title: "Hot Expresso",
+    price: {
+      before: 2.99,
+      after: 1.99,
+    },
+    score: 3.5,
+    image: require("../assets/items/item-3.png"),
+    favorite: false,
+  },
+  {
+    title: "Amakado Hot",
+    price: {
+      before: 3.99,
+      after: 2.99,
+    },
+    score: 4.0,
+    image: require("../assets/items/item-4.png"),
+    favorite: false,
+  },
+  {
+    title: "Mocha Frappe",
+    price: {
+      before: 5.99,
+      after: 4.99,
+    },
+    score: 4.5,
+    image: require("../assets/items/item-1.png"),
+    favorite: true,
+  },
+  {
+    title: "Ice Green Tea",
+    price: {
+      before: 3.99,
+      after: 2.99,
+    },
+    score: 4.0,
+    image: require("../assets/items/item-2.png"),
+    favorite: false,
+  },
+  {
+    title: "Hot Expresso",
+    price: {
+      before: 2.99,
+      after: 1.99,
+    },
+    score: 3.5,
+    image: require("../assets/items/item-3.png"),
+    favorite: false,
+  },
+  {
+    title: "Amakado Hot",
+    price: {
+      before: 3.99,
+      after: 2.99,
+    },
+    score: 4.0,
+    image: require("../assets/items/item-4.png"),
+    favorite: false,
+  },
+  {
+    title: "Mocha Frappe",
+    price: {
+      before: 5.99,
+      after: 4.99,
+    },
+    score: 4.5,
+    image: require("../assets/items/item-1.png"),
+    favorite: true,
+  },
+  {
+    title: "Ice Green Tea",
+    price: {
+      before: 3.99,
+      after: 2.99,
+    },
+    score: 4.0,
+    image: require("../assets/items/item-2.png"),
+    favorite: false,
+  },
+  {
+    title: "Hot Expresso",
+    price: {
+      before: 2.99,
+      after: 1.99,
+    },
+    score: 3.5,
+    image: require("../assets/items/item-3.png"),
+    favorite: false,
+  },
+  {
+    title: "Amakado Hot",
+    price: {
+      before: 3.99,
+      after: 2.99,
+    },
+    score: 4.0,
+    image: require("../assets/items/item-4.png"),
+    favorite: false,
+  },
 ];
 
 export default function Items() {
@@ -133,7 +253,7 @@ export default function Items() {
   return (
     <>
       <Text variant="headlineLarge" style={styles.title}>
-        Productos
+        Shop
       </Text>
       <View style={styles.container}>
         {items.map((item, index) => (
@@ -145,8 +265,9 @@ export default function Items() {
                 text2: "Esta función no está disponible",
               });
             }}
+            key={index}
           >
-            <Card style={styles.card} key={index} mode="contained">
+            <Card style={styles.card} mode="contained">
               <TouchableOpacity
                 style={styles.heart}
                 onPress={() => {

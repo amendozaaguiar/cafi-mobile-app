@@ -11,7 +11,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import * as Yup from "yup";
 import ErrorInput from "../components/ErrorInput";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { login } from "../api/login";
+import { login } from "../api/Api";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import Toast from "react-native-toast-message";
@@ -37,7 +37,7 @@ export default function LoginScreen() {
       try {
         await setUser(data);
 
-        router.replace("/(auth)/home");
+        router.navigate("/(auth)/home");
       } catch (e) {
         Toast.show({
           type: "error",
