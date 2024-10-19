@@ -52,10 +52,10 @@ export default function Categories() {
                 : styles.category
             }
             onPress={() => {
-              if (category.title === "Frappe") {
-                router.push("/(auth)/category");
-                return;
-              }
+              // if (category.title === "Frappe") {
+              //   router.push("/(auth)/category");
+              //   return;
+              // }
 
               Toast.show({
                 type: "info",

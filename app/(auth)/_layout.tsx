@@ -47,7 +47,7 @@ export default function AuthLayout() {
           >
             <Header user={user} />
             <Slot />
-            <Footer />
+            {/* <Footer /> */}
             <Toast />
           </SafeAreaView>
         </PaperProvider>
