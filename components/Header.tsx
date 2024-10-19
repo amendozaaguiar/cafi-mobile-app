@@ -10,8 +10,9 @@ export default function Header({ user }) {
     <View style={styles.container}>
       <Avatar.Image
         size={50}
-        source={{
-          uri: user?.photo,
+        source={require("../assets/icon.png")}
+        style={{
+          backgroundColor: "white",
         }}
       />
       <View style={styles.containerName}>
@@ -19,6 +20,10 @@ export default function Header({ user }) {
         <Text style={styles.text}>{user?.name}</Text>
       </View>
 
+      <View style={styles.notification}>
+        <Icon source="bell" size={25} color="white" />
+        <Text style={styles.notificationNumber}>9</Text>
+      </View>
       <View style={styles.notification}>
         <Icon source="bell" size={25} color="white" />
         <Text style={styles.notificationNumber}>9</Text>

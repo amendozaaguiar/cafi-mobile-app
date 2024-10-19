@@ -7,7 +7,6 @@ const login = async ({ email, password, remember }) => {
     // await new Promise((resolve) => setTimeout(resolve, 5000));
 
     const fakeUser = {
-      photo: "https://randomuser.me/api/portraits/women/70.jpg",
       name: "Administrador del sistema",
       email: "test@cafi.com",
       token: "fakeToken",
