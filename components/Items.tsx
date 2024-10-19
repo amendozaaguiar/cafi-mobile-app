@@ -266,6 +266,7 @@ export default function Items() {
               });
             }}
             key={index}
+            style={styles.cardsContainer}
           >
             <Card style={styles.card} mode="contained">
               <TouchableOpacity
@@ -323,6 +324,10 @@ const createStyles = (colors) =>
       flexDirection: "row",
       flexWrap: "wrap",
       justifyContent: "center",
+    },
+    cardsContainer: {
+      minWidth: 150,
+      padding: 10,
     },
     title: {
       margin: 10,
