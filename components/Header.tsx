@@ -1,8 +1,10 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { Avatar, Icon, Text, useTheme } from "react-native-paper";
+import useAuthStore from "../storage/AuthStore";
 
 export default function Header({ user }) {
   const theme = useTheme();
+  const { clearUser } = useAuthStore();
 
   const styles = createTheme(theme.colors);
 
@@ -24,10 +26,9 @@ export default function Header({ user }) {
         <Icon source="bell" size={25} color="white" />
         <Text style={styles.notificationNumber}>9</Text>
       </View>
-      <View style={styles.notification}>
-        <Icon source="bell" size={25} color="white" />
-        <Text style={styles.notificationNumber}>9</Text>
-      </View>
+      <TouchableOpacity style={styles.close} onPress={() => clearUser()}>
+        <Icon source="arrow-collapse-right" size={25} color="white" />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -50,7 +51,7 @@ const createTheme = (colors) =>
     notification: {
       padding: 10,
       position: "absolute",
-      right: 10,
+      right: 50,
       top: 10,
     },
     notificationNumber: {
@@ -63,5 +64,9 @@ const createTheme = (colors) =>
       position: "absolute",
       right: 0,
       bottom: 0,
+    },
+    close: {
+      position: "absolute",
+      right: 10,
     },
   });
