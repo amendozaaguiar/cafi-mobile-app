@@ -253,7 +253,7 @@ export default function Items() {
   return (
     <>
       <Text variant="headlineLarge" style={styles.title}>
-        Shop
+        Productos
       </Text>
       <View style={styles.container}>
         {items.map((item, index) => (

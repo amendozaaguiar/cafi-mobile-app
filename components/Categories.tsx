@@ -26,22 +26,6 @@ const categories = [
     title: "Frappe",
     image: require("../assets/categories/category-4.png"),
   },
-  {
-    title: "Helados",
-    image: require("../assets/categories/category-1.png"),
-  },
-  {
-    title: "Calientes",
-    image: require("../assets/categories/category-2.png"),
-  },
-  {
-    title: "Té",
-    image: require("../assets/categories/category-3.png"),
-  },
-  {
-    title: "Frappe",
-    image: require("../assets/categories/category-4.png"),
-  },
 ];
 
 export default function Categories() {
@@ -52,7 +36,7 @@ export default function Categories() {
   return (
     <View>
       <Text variant="headlineLarge" style={styles.categories}>
-        Categories
+        Categorias
       </Text>
       <ScrollView
         horizontal
